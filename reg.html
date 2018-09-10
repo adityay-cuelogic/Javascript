@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<script>
+function myFunction() {
+    var str = "Is is angel 2all there is?";
+    var patt1 = /is/gi;
+    var result = str.match(patt1);
+    patt1 = /\d/gi;
+    var result = str.match(patt1);
+    patt1 = /\b the/gi;
+    var result = str.match(patt1);
+   patt1 = /t+/g;
+    var result = str.match(patt1);
+   patt1 = /e?l/g;
+    var result = str.match(patt1);
+    console.log(result);
+}
+myFunction();
+</script>
+</html>
+
+

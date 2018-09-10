@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script>
+function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+    this.nationality = "English";
+}
+Person.prototype.nationality = "English";
+
+Person.prototype.print = function() {
+	document.write(this.firstName);
+}
+var myFather = new Person("John", "Doe", 50, "blue");
+console.log(myFather);
+myFather.print();
+var myMother = new Person("Sally", "Rally", 48, "green");
+console.log(myMother.nationality);
+myMother.print();
+</script>
+
+</body>
+</html>

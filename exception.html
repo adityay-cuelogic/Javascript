@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<script>
+function test() {
+	try {
+		var num =12;
+//		num.toUpperCase();
+		if(true){
+		throw "Custom";		
+		}
+	}
+	catch(err) {
+		console.log(err);
+	}
+	finally {
+	console.log("hello");
+	}		
+}
+test();
+</script>
+
+</body>
+</html>
