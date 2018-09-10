@@ -1,0 +1,71 @@
+<html>
+<script>
+const weather = true;
+const date    = new Promise(function(resolve, reject) {
+  if (weather) {
+    const dateDetails = {
+      name:     'Cubana Restaurant',
+      location: '55th Street',
+      table:    5
+    };
+    resolve(dateDetails)
+  } else {
+    reject(new Error('Bad weather, so no Date'))
+  }
+});
+
+/*const myDate = function() {
+  date
+    .then(orderUber)
+    .then(function(done) {
+      console.log('We are going on a date!')
+      console.log(done)
+    })
+    .catch(function(error) {
+        console.log(error.message)
+    })
+}*/
+const orderUber = function(dateDetails) {
+  return new Promise(function(resolve, reject) {
+    const message = `Get me an Uber ASAP to ${dateDetails.location}, we are going on a date!`;
+
+    resolve(message)
+  });
+}
+Promise.all([date, orderUber]).then(function(values) {
+  console.log(values);
+});
+
+
+
+//myDate();
+
+
+
+
+
+
+/*const takeUber = true;
+
+const uber = new Promise(function(resolve,reject) {
+	if(takeUber == true) {
+	var cabDetails = {
+		Number : "1234",
+		Color  : "White"
+	};
+		resolve(cabDetails);
+	} else {
+		reject("date is cancelled");	
+	}
+});
+
+const myUber = function() {
+	uber.then(function(result){
+	console.log(result);											
+	})
+	.catch(function(result){
+	console.log(result);											
+	})
+}*/
+</script>
+</html>

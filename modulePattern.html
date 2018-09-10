@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<script>
+function test() {
+var private = 100;
+function privateFunc() {
+	alert("hi");
+}
+return {
+	private:private,
+	privateFunction:privateFunc()
+};
+}
+
+var test1 = new test();
+console.dir(test1.private);
+test1.privateFunc;
+
+
+</script>
+
+</body>
+</html>
+

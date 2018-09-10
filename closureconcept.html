@@ -1,0 +1,21 @@
+<html>
+<script type="text/javascript">
+// var outerValue = 0;
+ var later;
+ function outerFunction() {
+ var innerValue = 0;
+var outerValue =0;
+outerValue=outerValue+1;
+ function innerFunction() {
+	innerValue++;
+ alert("outerValue"+outerValue);
+ alert("innerValue"+innerValue);
+ }
+ later = innerFunction;
+ }
+ outerFunction();
+ later();
+ later();
+ later();
+</script>
+</html>
