@@ -1,0 +1,25 @@
+<html>
+<script>
+var TeslaModelS = function() {
+  this.numWheels    = 4;
+  this.manufacturer = 'Tesla';
+  this.make         = 'Model S';
+}
+
+TeslaModelS.prototype = function() {
+var go = function() {
+	console.log("go");
+}
+var ahead = function() {
+	console.log("ahead");
+}
+return  {
+	go :go(),
+	ahead :ahead()
+}
+
+}();
+
+console.log(TeslaModelS.prototype instanceof Object );
+</script>
+</html>
