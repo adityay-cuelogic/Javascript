@@ -1,0 +1,67 @@
+<html>
+<style>
+input.border {
+border: 0;
+}
+#th1,#th2,#th4 {
+    cursor: pointer;
+}
+tr,td
+{
+height:30px;
+border:0;
+}
+</style>
+ <table border="1" cellspacing="10" cellpadding="10" id="todolist" >
+  <tr>
+   <td>
+	Category:
+	<select name="category" id="category">
+		<option name="select" value="-1">Please select Category</option>	
+		<option name="Office" value="Office">Office</option>	
+		<option name="Personal" value="Personal">Personal</option>
+	</select>
+   </td>
+   <td>
+	Name:
+    <input type ="text" name="todo" id="todo"/>
+  </tr>
+  <tr>
+    <td>
+    	<label> Date complete:</label>
+    	<input type="date" id="date">
+    </td>
+  </tr>
+  <tr>
+    <td>
+     <input type ="button" name="add" id="add" value="ADD" onclick ="addToDo()">
+     <input type ="button" name="delete" id="delete" value="Delete Multiple" onclick ="deleteOrDoneMultiple('delete')">
+     <input type ="button" name="done" id="done" value="Done" onclick ="deleteOrDoneMultiple('done')">
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <input type="textbox" name="search" id="search" placeholder="Search To Do List" onchange="searchToDoList(this.value)">
+	</td>
+	<td>
+		From:
+		<input type="date" name="fromsearch" id="fromsearch" onchange="filterDateByRange(this.value,document.getElementById('tosearch').value)">
+	</td>
+	<td>
+		To:
+		<input type="date" name="tosearch" id="tosearch" onchange="filterDateByRange(document.getElementById('fromsearch').value,this.value)">
+		</td>
+  </tr>
+ </table>
+<br/>
+ <table border="1" cellspacing="10" cellpadding="10" id="todolist1" >
+   <tr>
+    <th colspan="2" id="th1" onclick="sortToDoList(1)">Category</th>
+    <th id="th2" onclick="sortToDoList(2)">Name</th>
+	<th id="th3" onclick="sortToDoList(3)">date</th>
+	<th id="th4" onclick="sortToDoList(4)">Status</th>
+    <th>Edit</th>
+  </tr>
+ </table>
+ <script src="todo.js"></script>
+</html>
