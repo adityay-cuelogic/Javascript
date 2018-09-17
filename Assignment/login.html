@@ -1,0 +1,29 @@
+<html>
+	<form onsubmit="validate();return false;">
+		<table border="0" cellspacing="10" cellpadding="10">
+			<tr>
+				<td>Username:</td>
+				<td><input type ="text" name ="username" id="username"/></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type ="password" name ="password" id="password"/></td>
+			</tr>
+			<tr>
+				<td><input type ="submit"/></td>
+				<td><input type ="button" value="Register" onclick="window.location='file:///C:/Users/Vikas/Desktop/registration.html'"/></td>
+			</tr>
+		</table>
+	</form>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		function validate() {
+			if($("#username").val()=="a" && $("#password").val()=="a") {
+				window.location="file:///home/aditya/JavaScript%20Assignment/Javascript/Assignment/profile.html";
+			} else {
+				alert("The username or password is incorrect");
+				return false;
+			}
+		}
+	</script>
+</html>

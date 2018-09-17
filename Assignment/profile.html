@@ -1,0 +1,63 @@
+<html>
+<style>
+tr
+{
+height:30px;
+border:0;
+}
+</style>
+<form>
+	<table border="1" cellspacing="10" cellpadding="10">
+		<tr>
+			<td>UserName:</td>
+			<td><input type ="text" name ="username" id="username" value="aditya.yadav" disabled="true"/></td>
+		</tr>
+		<tr>
+			<td>First Name:</td>
+			<td><input type ="text" name ="firstname" id="firstname" value="Aditya"/></td>
+		</tr>
+		<tr>
+			<td>Last Name:</td>
+			<td><input type ="text" name ="lastname" id="lastname"value="Yadav"/></td>
+		</tr>
+		<tr>
+			<td>Gender:</td>
+			<td >Male:
+			<input type ="radio" name ="gender" id="male" checked="checked" disabled="true"/>
+			Female:
+			<input type ="radio" name ="gender" id="female"/ disabled="true"></td>
+		</tr>
+		<tr>
+			<td>Address:</td>
+			<td><input type ="textarea" name ="address" id="address" value="Mumbai"/></td>
+		</tr>
+		<tr>
+			<td>Attach Image:</td>
+			<td>
+			<img id="profilepic">
+			<input type ="file" accept="image/*" name ="upload" id="upload" onchange="readURL(this)" />
+			</td>
+		</tr>
+                <tr>
+			<td><input type="submit" value="Update Profile">
+		</tr>
+	</table>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	     function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#profilepic')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
+</html>
