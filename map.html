@@ -1,0 +1,61 @@
+<html>
+    <script>
+        var map = new Map(); 
+        map.set('name','Tutorial Point');
+        console.log(map.has('name1'));
+        console.log(map.get('name')); // Tutorial point
+        
+        //Using array as a Map
+        var roles = new Map([ 
+            ['r1', 'User'], 
+            ['r2', 'Guest'], 
+            ['r3', 'Admin'], 
+        ]);  
+        console.log(roles.get('r2'))
+
+        //entries function
+        var myMap = new Map(); 
+        myMap.set("id", "admin");
+        myMap.set("id","test"); //overrides the duplicate key value with test
+        myMap.set("pass", "admin@123"); 
+
+        var itr = myMap.entries(); 
+        console.log(itr.next().value);
+        console.log(itr.next().value); 
+        console.log(itr.next().value); 
+        
+        //More use of entries()
+        var roles = new Map([ 
+            ['r1', 'User'], 
+            ['r2', 'Guest'], 
+            ['r3', 'Admin'], 
+        ]);
+        for(let r of roles.entries()) 
+        console.log(r);
+
+        // //forEach()
+        // function userdetails(value,key) { 
+        //     console.log(key + " = " + value); 
+        // }  
+        // var myMap = new Map(); 
+        // myMap.set("id", "admin"); 
+        // myMap.set("pass", "admin@123"); 
+        // myMap.forEach(userdetails);  
+        
+
+        // //This is same as Map but faster than the Map.forEach
+        // let arr = [1, 2, 3, 4, 5];
+        // arr.forEach((num, index) => {
+        //     return arr[index] = num * 2;    
+        // });
+        // console.log(arr);
+
+        // //Weak map
+        // let weakMap = new WeakMap(); 
+        // let obj = {}; 
+        // console.log(weakMap.set(obj,"hello"));  
+        // console.log(weakMap.has(obj));// true
+        // console.log(weakMap.get(obj));
+        // console.log(obj);
+        </script>
+    </html>

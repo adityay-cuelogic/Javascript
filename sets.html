@@ -1,0 +1,41 @@
+<html>
+    <script>
+        var mySet = new Set(); 
+        mySet.add("Jim"); 
+        mySet.add("Jack"); 
+        mySet.add("Jim"); 
+
+        var itr = mySet.entries() ;
+        console.log(itr.next().value); 
+        console.log(itr.next().value); 
+        console.log(itr.next().value); 
+
+        //array as sets, this does not work
+        var roles = new Set([ 
+            ['User'], 
+            ['Guest'], 
+            ['Admin'], 
+        ]);
+        for(let r of mySet.entries()) {
+            console.log(r);
+        }
+        
+        //forEach
+        function logSetElements(value1, value2,set) {
+          console.log('s[' + value1 + '] = ' + value2);
+        }
+
+        new Set(['foo', 'bar', NaN,123]).forEach(logSetElements);
+
+        //Set Iterator
+        var  set = new Set(['a','b','c','d','e']);  
+        var iterator = set.keys(); 
+        console.log(iterator.next().value); 
+
+        //Map Iterator
+        var map = new Map([[1,'one'],[2,'two'],[3,'three']]); 
+        var iterator = map.entries(); 
+        console.log(iterator.next().value);
+        console.log(iterator.next().value['0']); 
+        </script>
+    </html>

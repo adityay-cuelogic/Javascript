@@ -1,0 +1,123 @@
+<html> 
+   <head> 
+      <title> Document Title1 </title> 
+      
+      <script type = "text/javascript">
+//normal class declararion	  
+//IMPORTANT NOTE: the function keyword does not support here, need to check why
+            class test {
+				constructor(height,width) {
+					this.methodtest(height,width);
+					console.log(height);
+					console.log(width);
+				}
+				methodtest(height,width) {
+					console.log("here");
+					console.log(height);
+					console.log(width);
+				}
+			}
+			var obj = new test(100,20);
+//class expression(anonymous)
+			var test1 = class {
+				constructor(height,width) {
+					this.methodtest(height,width);
+					console.log(height);
+					console.log(width);
+				}
+				methodtest(height,width) {
+					console.log("here");
+					console.log(height);
+					console.log(width);
+				}
+			}
+			obj = new test1(15,20);
+			
+//class expression(named). The class name does not matter here, we need to create the object through varible name(in this case test12) only 
+			var test12 = class test2{
+				constructor(height,width) {
+					this.methodtest(height,width);
+					console.log(height);
+					console.log(width);
+				}
+				methodtest(height,width) {
+					console.log("here");
+					console.log(height);
+					console.log(width);
+				}
+			}
+			obj = new test12(5,10);	
+
+//static methods
+class StaticMem { 
+   static disp() { 
+      console.log("Static Function called") 
+   } 
+} 
+StaticMem.disp() //invoke the static metho			
+
+//Likeany other language we have defaut constructor in js also.
+
+//Inheritance, this is same as php(in terms of types of inheriatance suppport also)
+class Shape { 
+   constructor(a) { 
+      this.Area = a
+   } 
+} 
+class Circle extends Shape { 
+   disp() { 
+      console.log("Area of the circle:  "+this.Area) 
+   } 
+} 
+var obj = new Circle(223); 
+obj.disp() ;
+
+//overriding
+//Overloading does not suppport here
+class PrinterClass { 
+   doPrint() { 
+      console.log("doPrint() from Parent called… ");
+   }
+}
+class StringPrinter extends PrinterClass { 
+   doPrint() { 
+      console.log("doPrint() is printing a string…"); 
+   }
+   //Overloading, it calls the last method define,in this case it will calls the 2 doTest(), just because its defined in last
+   doTest(name) {
+   console.log(name);
+   }
+   doTest() {
+   console.log("no name");
+   }
+} 
+var obj = new StringPrinter(); 
+obj.doPrint();
+obj.doTest();
+
+
+//Super KeyWord
+class PrinterClass1 { 
+   doPrint() {
+      console.log("doPrint() from Parent called…") 
+   }
+   constructor() {
+	alert("parent class");
+   }
+}  
+class StringPrinter1 extends PrinterClass1 { 
+constructor() {
+super.doPrint();//This will not work as we Must call super constructor in derived class before accessing any function
+	alert("child class");
+   }
+
+   doPrint() { 
+      super.doPrint(); 
+      console.log("doPrint() is printing a string…") 
+   } 
+} 
+var obj = new StringPrinter1() 
+obj.doPrint();
+      </script> 
+   </head>   
+</html>
